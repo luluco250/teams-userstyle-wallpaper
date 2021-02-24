@@ -1,44 +1,50 @@
-:root
-{
-	--background: url("https://picsum.photos/1920/1080");
-	--transparency: 0.4;
-	--blurriness: 0.5;
-}
-
-html
-{
-	position: relative;
-	background: black;
-}
-
-html::before
-{
-	--blur-size: calc(1em * var(--blurriness));
-	--padding: calc(-3 * var(--blur-size));
-	content: "";
-	background: var(--background);
-	background-position: center;
-	background-size: cover;
-	position: absolute;
-	left: var(--padding);
-	top: var(--padding);
-	right: var(--padding);
-	bottom: var(--padding);
-	filter: blur(var(--blur-size));
-	opacity: var(--transparency);
+/* Configuration */
+:root {
+    --backcolor: midnightblue;
+    --wallpaper: url("https://picsum.photos/1920/1080");
+    --opacity: 0.5;
+    --blur: 0.35;
 }
 
 body
-,.app-bar
-,.ts-left-rail-wrapper
+{
+    background: var(--backcolor);
+}
+
+body::before
+{
+    --blur-size: calc(1em * var(--blur));
+    --padding: calc(-3.14159 * var(--blur-size));
+    content: " ";
+    background: var(--wallpaper);
+    background-position: center;
+    background-size: cover;
+    filter: blur(var(--blur-size));
+    opacity: var(--opacity);
+    position: absolute;
+    left: var(--padding);
+    top: var(--padding);
+    right: var(--padding);
+    bottom: var(--padding);
+}
+
+.ts-middle
 ,.ts-embedded-container
-,#app-messages-header
-,.app-header-bar
-,.messages-header-v2 .ts-section-divider::before
-,.ts-middle
 ,.ts-middle-messages-body
 ,.ts-middle-messages-container
 ,virtual-repeat > .list-wrap.list-wrap-v3 > .item-wrap
+,.chat-style .self .message-actions-container
+,.ts-left-rail-wrapper
+,.app-bar
+,.app-header-bar
 {
-	background: none;
+    background: none;
+}
+
+.placeholder-item
+,.messages-header-v2 .ts-section-divider::before
+,.date-separator::before
+,.left-rail-header.constant-border::after
+{
+    visibility: hidden;
 }
