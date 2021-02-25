@@ -1,8 +1,8 @@
 /* Configuration */
 :root {
-    --backcolor: midnightblue;
+    --backcolor: rgb(15, 0, 45);
     --wallpaper: url("https://picsum.photos/1920/1080");
-    --opacity: 0.5;
+    --opacity: 0.65;
     --blur: 0.35;
 }
 
